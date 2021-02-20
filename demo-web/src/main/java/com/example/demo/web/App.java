@@ -1,5 +1,7 @@
 package com.example.demo.web;
 
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -21,4 +23,9 @@ public class App {
         SpringApplication.run(App.class, args);
     }
 
+    @Bean
+    public IRule rule() {
+        // 自定义负载规则
+        return new RandomRule();
+    }
 }
