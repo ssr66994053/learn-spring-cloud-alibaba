@@ -1,0 +1,29 @@
+# bootstrap.yml 最高优先级配置文件
+# 这里就只配置注册中心地址 和基本配置 其他都从配置中心去拉 这里使用nacos
+
+server:
+  port: 8090
+
+spring:
+  application:
+    name: demo
+  cloud:
+    sentinel:
+      eager: true
+      transport:
+        port: 8719
+        dashboard: localhost:8080
+      datasource:
+        ds:
+          nacos:
+            server-addr: localhost:8848
+            dataId: nacos-sentinel-demo
+            groupId: DEFAULT_GROUP
+            ruleType: flow
+    nacos:
+      config:
+        prefix: config-demo
+        file-exetension: yaml
+        server-addr: localhost:8848
+      discovery:
+        server-addr: localhost:8848

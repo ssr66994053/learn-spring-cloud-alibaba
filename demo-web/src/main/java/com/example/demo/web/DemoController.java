@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class DemoController {
 
-    @Autowired
     private DemoService demoService;
 
     @RequestMapping(value = "/hello")
@@ -22,5 +21,10 @@ public class DemoController {
     @ResponseBody
     public String say(@PathVariable("to") String to) {
         return demoService.sayHello(to);
+    }
+
+    @Autowired
+    public void setDemoService(DemoService demoService) {
+        this.demoService = demoService;
     }
 }

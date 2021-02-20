@@ -2,9 +2,11 @@ package com.example.demo.web;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 
 @Service
+@RefreshScope
 public class DemoService {
 
     @SentinelResource(value = "sayHello", blockHandler = "blockHandler", fallback = "fallback")
