@@ -15,10 +15,12 @@ public class DemoService {
         return "Hello " + to;
     }
 
+    // 降级
     public String fallback(String to) {
         return "fallback " + to;
     }
 
+    // 限流
     public String blockHandler(String to, BlockException ex) {
         ex.printStackTrace();
         return "blockHandler " + to;
