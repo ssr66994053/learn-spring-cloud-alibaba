@@ -12,11 +12,11 @@ import org.springframework.web.client.RestTemplate;
 public class ConsumerController {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private EchoApi echoApi;
 
     @RequestMapping(value = "/echo/{str}", method = RequestMethod.GET)
     public String echo(@PathVariable String str) {
-        return restTemplate.getForObject("http://demo/p/echo/" + str, String.class);
+        return echoApi.echo(str);
     }
 
 }
