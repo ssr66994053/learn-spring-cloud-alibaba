@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.consumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;

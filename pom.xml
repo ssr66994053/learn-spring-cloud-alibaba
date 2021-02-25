@@ -12,6 +12,7 @@
         <module>demo-web</module>
         <module>demo-provider</module>
         <module>demo-consumer</module>
+        <module>demo-gateway</module>
     </modules>
 
     <parent>
